@@ -1,0 +1,36 @@
+# we use APIView because it's class based response rather than functional based
+# we'd used a api_view wrapper if it were
+
+# extends APIView
+# class PeopleIndex(APIView):
+#     # HTTP request functions defined below
+#     def get(self, request):
+#         # queries the database
+#         people = People.objects.all()
+#         # here we pass the people variable with the People object as values and serialize them
+#         # set many=true to let specify that we're serializing more than one object
+#         serializer = PeopleSerializer(people, many=True)
+#         # return the JSON data using response function
+#         return Response(serializer.data)
+
+
+# class SinglePerson(APIView):
+#     # HTTP request functions defined below
+#     # pass the id from the path as an argument
+#     def get(self, request, id):
+#         # queries the database and gets the dynamic id that we're passing through in the path
+#         people = People.objects.get(id=id)
+#         # only serializing one object
+#         serializer = PeopleSerializer(people, many=False)
+#         # return the JSON data using response function
+#         return Response(serializer.data)
+
+# class PersonCreate(APIView):
+
+#     def post(self, request):
+#         # we're now passing through the equivalent of req.body to the serializer to turn it backto model format
+#         serializer = PeopleSerializer(data=request.data)
+#         if serializer.is_valid():
+#           serializer.save()
+#         # return the JSON data using response function
+#         return Response(serializer.data)

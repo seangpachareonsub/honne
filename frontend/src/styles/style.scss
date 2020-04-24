@@ -1,0 +1,1368 @@
+@mixin size($width, $height, $flexdir, $jcc, $ai) {
+  width: $width;
+  height: $height;
+  display: flex;
+  flex-direction: $flexdir;
+  justify-content: $jcc;
+  align-items: $ai;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include size(100vw, 100vh, column, center, center);
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  line-height: 1;
+  background-color: rgb(232, 231, 235);
+  // background-color: snow;
+}
+
+#root {
+  @include size(93vw, 96vh, column, center, center);
+  // background-color: red;
+
+  .home-text {
+    z-index: 10;
+    color: white;
+    position: absolute;
+    top: 7%;
+    @include size(85%, 35%, column, space-evenly, center);
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      letter-spacing: 1px;
+      font-family: "Poiret One", cursive;
+      span {
+        font-size: 32px;
+      }
+    }
+    h6 {
+      font-size: 19px;
+      font-family: "Times New Roman", Times, serif;
+      text-align: center;
+    }
+  }
+
+  .login {
+    z-index: 10;
+    @include size(85%, 15%, row, space-around, center);
+    position: absolute;
+    bottom: 3%;
+    button {
+      color: white;
+      font-size: 17px;
+      background-color: transparent;
+      font-family: "Montserrat";
+      border: none;
+    }
+    a {
+      padding: 3% 2%;
+      &:nth-child(1) {
+        border-bottom: 1px whitesmoke solid;
+      }
+      &:nth-child(2) {
+        border-top: 1px whitesmoke solid;
+      }
+    }
+  }
+
+  .home-container {
+    @include size(100%, 100%, column, center, center);
+    position: absolute;
+    background-color: black;
+    video {
+      position: absolute;
+      min-height: 100%;
+      height: 100vh;
+      object-fit: fill;
+      filter: brightness(65%);
+    }
+  }
+
+  // ########################################################################
+  // HEADER
+
+  header {
+    @include size(100vw, 10vh, row, center, center);
+    position: fixed;
+    background-color: rgb(67, 58, 73);
+    color: white;
+    top: 0;
+    z-index: 2;
+    h1 {
+      font-size: 35px;
+      font-family: "Poiret One", cursive;
+    }
+  }
+
+  // ########################################################################
+  // REGISTER PAGE
+  .register-container {
+    @include size(100%, 100%, column, center, center);
+    position: absolute;
+    background-color: black;
+    video {
+      position: absolute;
+      min-height: 100%;
+      height: 100vh;
+      object-fit: fill;
+      filter: brightness(20%) blur(2px);
+    }
+    h1 {
+      z-index: 10;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+      color: white;
+      position: absolute;
+      top: 10%;
+      text-align: center;
+      span {
+        font-size: 32px;
+      }
+    }
+    form {
+      @include size(90%, 53%, column, space-around, center);
+      margin-top: 25%;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.075);
+      border-radius: 10px;
+      input {
+        height: 10%;
+        background-color: transparent;
+        color: white;
+        user-select: none;
+        outline: none;
+        width: 90%;
+        padding: 5% 0;
+        // margin-top: -5%;
+        font-size: 17px;
+        border: none;
+        border-bottom: 1px solid white;
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+      }
+      small {
+        color:rgb(209, 26, 26);
+        position: absolute;
+        left: 10%;
+      }
+        #first {
+          top: 38.5%;
+        }
+        #second {
+          top: 50%;
+        }
+        #third {
+          top: 61%;
+        }
+        #fourth {
+          top: 72%;
+        }
+      
+      button {
+        font-size: 16px;
+        color: white;
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  // ########################################################################
+  // LOGIN PAGE
+  .login-container {
+    @include size(100%, 100%, column, center, center);
+    overflow: hidden;
+    position: absolute;
+    background-color: black;
+    video {
+      position: absolute;
+      min-height: 100%;
+      height: 100vh;
+      object-fit: fill;
+      filter: brightness(20%) blur(2px);
+    }
+    h1 {
+      z-index: 10;
+      font-size: 50px;
+      font-family: "Times New Roman", Times, serif;
+      color: white;
+      position: absolute;
+      top: 10%;
+      text-align: center;
+      span {
+        font-size: 32px;
+      }
+    }
+    form {
+      @include size(90%, 30%, column, space-around, center);
+      margin-top: 10%;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.075);
+      border-radius: 10px;
+      input {
+        height: 10%;
+        background-color: transparent;
+        color: white;
+        user-select: none;
+        outline: none;
+        width: 90%;
+        padding: 5% 0;
+        font-size: 17px;
+        border: none;
+        border-bottom: 1px solid white;
+        &::-webkit-input-placeholder {
+          color: white;
+        }
+      }
+      small {
+        color:rgb(209, 26, 26);
+        position: absolute;
+        left: 10%;
+        bottom: 41.7%;
+      }
+      button {
+        font-size: 16px;
+        color: white;
+        user-select: none;
+        outline: none;
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  // ########################################################################
+  // PROFILE SETUP PAGE
+  .setup-container {
+    height: 100%;
+    width: 100vw;
+
+    .setup-content {
+      position: absolute;
+      background-color: white;
+      filter: brightness(85%);
+      bottom: 0;
+      height: 91%;
+      width: 100%;
+      margin-bottom: -1.5%;
+      padding: 0 6.5%;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    form {
+      @include size(100%, 49%, column, space-evenly, flex-start);
+      transform: translateY(-6%);
+      margin: 25% 0 0 0;
+      h1 {
+        font-size: 22px;
+        small {
+          font-size: 14px;
+          color: rgb(58, 56, 56);
+        }
+      }
+      h2 {
+        font-size: 19px;
+        letter-spacing: 0.5px;
+        font-family: "Times New Roman", Times, serif;
+        color: rgb(85, 28, 126);
+      }
+
+      .setup-date {
+        h5 {
+          width: 100%;
+          font-size: 17px;
+          ion-icon {
+            font-size: 28px;
+            margin: 0 0 -1% 2%;
+          }
+        }
+        @include size(100%, 25%, column, space-evenly, flex-start);
+        input {
+          border: none;
+          font-family: "Montserrat";
+          font-size: 17px;
+          outline: none;
+          &::-webkit-inner-spin-button {
+            display: none;
+          }
+        }
+      }
+      .setup-gender {
+        @include size(100%, 25%, column, space-evenly, flex-start);
+        .setup-checkbox {
+          @include size(70%, 50%, row, space-evenly, center);
+          label {
+            @include size(50%, 70%, row, space-evenly, center);
+            font-size: 17px;
+            input {
+              width: 19px;
+              height: 19px;
+            }
+          }
+        }
+      }
+
+      button {
+        font-size: 16px;
+        width: 67%;
+        height: 5%;
+        top: -11%;
+        right: -13%;
+        position: absolute;
+        font-family: "Montserrat";
+        color: black;
+        display: flex;
+        align-items: center;
+        ion-icon {
+          font-size: 26px;
+          margin: 0 0 0 2%;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 7%;
+      small {
+        font-size: 14px;
+        color: rgb(58, 56, 56);
+      }
+    }
+    .ques {
+      @include size(100%, 10%, column, space-between, flex-start);
+      transition: height 0.3s ease-in;
+      margin-bottom: 5%;
+      p {
+        opacity: 0;
+        display: none;
+        font-size: 15.2px;
+      }
+      h5 {
+        font-size: 19px;
+        width: 100%;
+        color: rgb(85, 28, 126);
+        font-family: "Times New Roman", Times, serif;
+        ion-icon {
+          margin-bottom: -6px;
+          margin-left: 2%;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  // ########################################################################
+  // ANSWER QUESTION PAGE
+  .question-container {
+    @include size(100%, 90%, column, space-around, center);
+    position: absolute;
+    bottom: 0;
+    h2 {
+      font-size: 17px;
+      margin: 7% 0;
+    }
+    h4 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      letter-spacing: 0.4px;
+      margin-bottom: -2.8%;
+    }
+    button {
+      font-size: 17px;
+      position: absolute;
+      top: -6.8%;
+      z-index: 3;
+      right: 6%;
+      color: white;
+      font-family: "Montserrat";
+    }
+    .question-answer {
+      height: 91%;
+      width: 100%;
+      display: flex;
+      overflow-y: scroll;
+      flex-direction: column;
+
+      .qa-row {
+        margin: 4% 0;
+        padding: 2% 5%;
+        @include size(100%, auto, column, space-between, flex-start);
+        position: relative;
+        small {
+          margin-bottom: 3%;
+          text-transform: capitalize;
+          color: rgb(42, 12, 63);
+          font-size: 15.5px;
+        }
+        .answers {
+          @include size(100%, 50%, row, space-evenly, center);
+          p {
+            width: 50%;
+            margin-top: 9%;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  // ########################################################################
+  // NAVBAR
+  nav {
+    position: absolute;
+    @include size(100%, 8%, row, center, center);
+    bottom: 0;
+    border-top: grey 1.2px solid;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: rgb(84, 76, 90);
+    a {
+      text-align: center;
+      color: whitesmoke;
+      text-decoration: none;
+      @include size(25%, 100%, column, space-evenly, center);
+      h5 {
+        font-size: 13.5px;
+      }
+      ion-icon {
+        color: rgba(255, 255, 255, 0.842);
+        margin-bottom: 4%;
+        font-size: 27px;
+      }
+    }
+  }
+
+  // ########################################################################
+  // PROFILE PAGE
+  .profile-container {
+    // background-color: lightskyblue;
+    @include size(100%, 80%, column, space-between, center);
+    transform: translateY(2.3%);
+    img {
+      width: 200px;
+      object-fit:cover;
+      height: 200px;
+      border-radius: 50%;
+    }
+    .profile-info {
+      margin: 3% 0 8% 0;
+      @include size(100%, 10%, row, center, center);
+      // background-color: rgb(106, 84, 121);
+      h1 {
+        text-transform: capitalize;
+        font-size: 34px;
+        margin: 0 3%;
+      }
+      h2 {
+        font-size: 25px;
+        margin-bottom: -1.5%;
+      }
+    }
+    .media-settings {
+      // background-color: magenta;
+      @include size(90%, 50%, column, space-between, none);
+
+      .logout {
+        @include size(100%, 10%, row, none, center);
+        color: rgb(221, 7, 7);
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+        @include size(100%, 25%, row, center, center);
+        .settings {
+          @include size(100%, 100%, row, space-between, center);
+          ion-icon {
+            font-size: 43px;
+          }
+          .text {
+            @include size(78%, 100%, column, space-evenly, flex-start);
+            h2 {
+              font-size: 19px;
+            }
+            h5 {
+              font-size: 17px;
+              letter-spacing: 0.7;
+              font-family: "Times New Roman", Times, serif;
+            }
+          }
+        }
+      }
+    }
+    .setting-text {
+      @include size(75%, 100%, column, space-evenly, center);
+      // background-color: green;
+      div {
+        text-align: start;
+        width: 90%;
+        h2 {
+          margin-bottom: 2%;
+        }
+      }
+    }
+
+    .other-user-picture {
+      width: 100%;
+      height: 68%;
+      overflow: hidden;
+      .slideshow {
+        height: 100%;
+        transition: 0.35s;
+        display: flex;
+
+        .slides {
+          height: 100%;
+          min-width: 100%;
+          img {
+            border-radius: 20px;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .other-user-info {
+      @include size(100%, 42%, column, center, center);
+      // margin-top: 10%;
+      .text {
+        @include size(95%, 90%, column, space-evenly, flex-start);
+        // background-color: lightskyblue;
+        h1 {
+          text-transform: capitalize;
+          font-size: 33px;
+          width: 100%;
+          span {
+            font-size: 22px;
+            margin: -3% 3% 0 3%;
+          }
+        }
+        small {
+          margin-top: -3%;
+        }
+        h2 {
+          margin-top: -3%;
+          width: 75%;
+          font-family: "Montserrat";
+          font-size: 18px;
+          // stlye to change
+          background-color: transparent;
+          border: none;
+          color: brown;
+          outline: none;
+        }
+        p {
+          height: 80%;
+          font-family: "Times New Roman", Times, serif;
+          text-align: justify;
+          font-size: 16.8px;
+          padding-top: 4%;
+          letter-spacing: 0.7;
+          line-height: 22.5px;
+          margin-bottom: -5.5%;
+        }
+      }
+      .icons {
+        @include size(90%, 8%, row, space-evenly, center);
+        position: absolute;
+        top: 54%;
+        ion-icon {
+          font-size: 40px;
+          color: rgba(58, 67, 73, 0.863);
+        }
+      }
+    }
+  }
+
+  // ########################################################################
+  // SETTINGS PAGE
+  .settings-container {
+    @include size(100%, 90%, column, space-between, flex-start);
+    position: absolute;
+    padding: 8% 5%;
+    bottom: 0%;
+    h1 {
+      font-size: 20px;
+    }
+    .terms {
+      @include size(100%, 35%, column, space-between, flex-start);
+      h2 {
+        width: 100%;
+        &:nth-of-type(4) {
+          text-align: center;
+          font-size: 25px;
+          color: rgb(106, 84, 121);
+        }
+      }
+    }
+
+    // MODAL
+    .modal-content {
+      @include size(80%, 45%, column, space-evenly, center);
+      // background-color: yellowgreen;
+      text-align: center;
+      line-height: 1.5;
+      color: white;
+      h1 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 19px;
+      }
+      button {
+        font-size: 18px;
+        color: white;
+      }
+
+      .delete-container {
+        @include size(100%, 100%, column, space-between, center);
+        h1 {
+          margin-bottom: 22%;
+          font-family: cursive;
+          font-size: 30px;
+        }
+        p {
+          font-size: 17px;
+        }
+        .delete-button {
+          @include size(100%, 100%, row, space-between, center);
+          button {
+            border: none;
+            outline: none;
+            user-select: none;
+            padding: 3.4%;
+            background-color: transparent;
+            &:nth-of-type(1) {
+              border-top: 1px white solid;
+              color: rgb(204, 13, 13);
+            }
+            &:nth-of-type(2) {
+              border-bottom: 1px white solid;
+            }
+          }
+        }
+      }
+    }
+    .modal-background {
+      backdrop-filter: brightness(50%) blur(2px);
+    }
+    // background-color: yellowgreen;
+    .delete-account {
+      @include size(100%, 10%, column, space-around, flex-start);
+      color: rgb(221, 7, 7);
+    }
+    // FORM
+    form {
+      @include size(100%, 55%, column, space-evenly, stretch);
+      // background-color: magenta;
+      button {
+        position: absolute;
+        top: -7.4%;
+        right: 5%;
+        z-index: 10;
+        color: white;
+        font-size: 21px;
+        font-family: "Times New Roman", Times, serif;
+      }
+      label {
+        display: flex;
+        justify-content: space-around;
+      }
+      .input-container {
+        @include size(100%, 25%, column, center, stretch);
+
+        .slider {
+          -webkit-appearance: none;
+          width: 90%;
+          height: 3px;
+          outline: none;
+          background: rgba(0, 0, 0, 0.747);
+          position: absolute;
+        }
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 3;
+          position: relative;
+          background: rgb(49, 79, 87);
+        }
+
+        .progress-bar {
+          height: 3px;
+          background: rgb(26, 141, 135);
+          position: absolute;
+        }
+        .input-text {
+          // background-color: brown;
+          @include size(95%, 25%, row, space-between, center);
+        }
+        h2 {
+          font-size: 16px;
+          margin-bottom: 7%;
+        }
+      }
+
+      .gender-container {
+        @include size(100%, 25%, column, space-between, flex-start);
+        // background-color: brown;
+        margin-top: 2%;
+        h2 {
+          font-size: 18px;
+          margin-bottom: 2%;
+        }
+        .checkbox-container {
+          @include size(90vw, 75%, row, space-between, center);
+          label {
+            // background-color: burlywood;
+            @include size(33%, 100%, row, space-around, center);
+            input {
+              width: 23px;
+              height: 23px;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ########################################################################
+  // MESSAGES LIST PAGE
+  .messages-container {
+    @include size(100%, 83%, column, space-around, center);
+
+    .new-matches {
+      width: 100%;
+      height: 27%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      h4 {
+        margin-left: 2%;
+        margin-top: 2.5%;
+        color:rgb(85, 28, 126)
+      }
+      .match-slider {
+        width: 100%;
+        display: flex;
+        height: 83%;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        a {
+          @include size(25%, 100%, column, space-evenly, center);
+          color: black;
+          min-width: 28%;
+          text-align: center;
+          div {
+            @include size(100%, 100%, column, space-evenly, center);
+            height: 100%;
+            font-size: 13px;
+            h6 {
+              font-size: 14px;
+              text-transform: capitalize;
+            }
+            img {
+              width: 80%;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .message-list {
+      height: 78%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      h4 {
+        margin-top: -1%;
+        padding: 2% 0 0 3%;
+        background-color: rgb(231, 232, 235);
+        z-index: 3;
+        position: fixed;
+        height: 4%;
+        width: 90%;
+        color:rgb(85, 28, 126)
+      }
+      .buffer {
+        height: 5%;
+        width: 90%;
+      }
+
+      a {
+        @include size(100%, 20%, row, start, center);
+        color: black;
+        text-decoration: none;
+
+        .preview-row {
+          // background-color: green;
+          margin: 2% 0;
+          @include size(100%, 100%, row, start, center);
+          // border-bottom: hotpink 1px solid;
+          img {
+            height: 70%;
+            border-radius: 50%;
+            margin: 0 4% 0 2%;
+          }
+          .preview-text {
+            overflow: hidden;
+            @include size(80%, 80%, column, space-evenly, flex-start);
+            h5 {
+              font-size: 16px;
+              text-transform: capitalize;
+            }
+            p {
+              font-size: 14px;
+              color: rgb(43, 43, 43);
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ########################################################################
+  // CHAT PAGE
+  .chat-container {
+    @include size(100%, 100%, column, space-between, center);
+    background: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/2d9dd173426833.5c08f5634ff45.png");
+    background-size: contain;
+    .header {
+      @include size(100vw, 10%, row, none, center);
+      background-color: rgb(67, 58, 73);
+      margin-top: -5%;
+      img {
+        width: 60px;
+        border-radius: 50%;
+        margin: 0 8%;
+      }
+      ion-icon {
+        margin: 0 30%;
+        font-size: 37px;
+        color: white;
+      }
+      h3 {
+        font-size: 20px;
+        text-transform: capitalize;
+        color: white;
+      }
+    }
+    .convo-container {
+      background-size: contain;
+      height: 85%;
+      position: absolute;
+      width: 100vw;
+      position: relative;
+      overflow-y: scroll;
+      border: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .position-container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+
+        .user-box,
+        .other-box {
+          height: auto;
+          padding: 2%;
+          border-radius: 10px;
+          word-wrap: break-word;
+          max-width: 90%;
+          margin: 2% 0;
+          small {
+            font-size: 12.5px;
+          }
+        }
+        .user-box {
+          align-self: flex-end;
+          background-color: rgba(245, 208, 214, 0.884);
+        }
+        .other-box {
+          background-color: rgba(190, 217, 240, 0.925);
+          align-self: flex-start;
+        }
+      }
+    }
+
+    form {
+      @include size(100%, 6%, row, space-between, center);
+      textarea {
+        border: 1px solid black;
+        width: 85%;
+        height: 80%;
+        word-wrap: break-word;
+        font-size: 15px;
+        color: black;
+        padding: 2%;
+        border-radius: 15px;
+        outline: none;
+        font-family: "Montserrat";
+      }
+      ion-icon {
+        font-size: 32px;
+        margin-left: -45%;
+      }
+    }
+  }
+
+  // ########################################################################
+  // SWIPE PAGE
+
+  .swipe-container {
+    @include size(100%, 84%, column, center, center);
+    // background-color: purple;
+
+    .user-swipe {
+      @include size(100%, 97%, column, space-between, center);
+      overflow: hidden;
+
+      .button {
+        @include size(100%, 6.5%, row, space-around, center);
+        border: none;
+        transform: translateY(-35%);
+        background-color: rgb(231, 232, 235);
+        button {
+          font-size: 16.2px;
+          width: 20%;
+          height: 100%;
+          background-color: transparent;
+          font-family: "Montserrat";
+          border: none;
+          font-weight: bold;
+          color: rgb(67, 58, 73);
+          outline: none;
+          ion-icon {
+            margin-bottom: -5%;
+            font-size: 19px;
+            color: rgb(192, 45, 45);
+          }
+        }
+      }
+
+      .slide-container {
+        border-radius: 20px;
+        // border: 1px solid black;
+        width: 349px;
+        height: 83%;
+        display: flex;
+        transition: 0.2s;
+        margin-top: 6%;
+
+        .slides {
+          border-radius: 20px;
+          @include size(100%, 100%, column, space-between, center);
+          min-width: 100%;
+
+          .slide-questions {
+            width: 99.5%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            padding: 0 2.5%;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 5%;
+
+            .question-slideshow {
+              width: 100%;
+              height: 100%;
+            }
+            .rows {
+              width: 100%;
+              min-height: 38%;
+              margin: 6.5% 0 9% 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              .answers {
+                display: flex;
+                justify-content: space-around;
+              }
+              h4 {
+                text-transform: capitalize;
+                font-family: "Times New Roman", Times, serif;
+                letter-spacing: 0.7px;
+                font-size: 18px;
+                color: rgb(85, 28, 126);
+              }
+              p {
+                margin-left: 5.5%;
+              }
+            }
+          }
+          .slide-info {
+            @include size(99.5%, 44%, column, space-between, center);
+            // background-color: rgb(231, 203, 203);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            padding: 0 5%;
+
+            img {
+              height: 60%;
+              border-radius: 50%;
+            }
+            div {
+              @include size(100%, 100%, column, space-around, center);
+              // background-color: yellow;
+              margin-top: 3%;
+              h2 {
+                text-transform: capitalize;
+                font-size: 28px;
+              }
+
+              h5 {
+                font-size: 16px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                ion-icon {
+                  margin-right: 1%;
+                  font-size: 20px;
+                  margin-top: -1%;
+                }
+                span {
+                  margin: 0 9%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // ########################################################################
+    // MATCH MODAL
+    .modal-content {
+      @include size(85%, 70%, column, space-between, center);
+      text-align: center;
+      line-height: 1.5;
+      color: white;
+      div {
+        @include size(75%, 25%, row, space-between, center);
+      }
+      h3 {
+        font-size: 17.1px;
+        width: 100%;
+      }
+      h1 {
+        font-family: cursive;
+        font-size: 32px;
+        width: 100%;
+        ion-icon {
+          color: red;
+          font-size: 30px;
+          margin-bottom: -1%;
+        }
+      }
+      img {
+        width: 130px;
+        border-radius: 50%;
+      }
+
+      div {
+        width: 100%;
+        button {
+          color: white;
+          font-size: 15px;
+          font-family: "Montserrat";
+          padding: 3.5% 1.5%;
+          border: none;
+          margin: 0 2.5%;
+          background-color: transparent;
+          outline: none;
+          user-select: none;
+          &:nth-of-type(1) {
+            border-top: 1px solid whitesmoke;
+          }
+          &:nth-of-type(2) {
+            border-bottom: 1px solid whitesmoke;
+            width: 50%;
+          }
+        }
+      }
+    }
+    .modal-background {
+      backdrop-filter: brightness(60%) blur(2px);
+    }
+  }
+
+  // ########################################################################
+  // MEDIA PAGE
+  .media-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+
+    button {
+      position: absolute;
+      top: -7.3%;
+      z-index: 10;
+      font-size: 21px;
+      right: 7%;
+      color: white;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .image-container,
+    .input-container {
+      width: 130px;
+      height: 200px;
+      position: relative;
+      border-radius: 10px;
+      // background-color: lightseagreen;
+      box-shadow: 1px 1px 2px 2px rgb(175, 173, 173);
+      ion-icon {
+        font-size: 30px;
+        right: -10%;
+        top: -7%;
+        background-color: white;
+        border-radius: 50%;
+        color: rgb(182, 97, 97);
+        position: absolute;
+      }
+      img {
+        object-fit: cover;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+
+    .input-container {
+      border: 1px solid rgb(102, 102, 102);
+      background-color: rgba(64, 105, 131, 0.301);
+      box-shadow: none;
+      ion-icon {
+        background-color: white;
+        border-radius: 50%;
+        color: rgb(106, 84, 121);
+      }
+    }
+  }
+
+  // ########################################################################
+  // EXPLORE PAGE
+
+  .explore-container {
+    @include size(100%, 85%, column, space-between, center);
+    .mapboxgl-ctrl,
+    .mapboxgl-ctrl-logo {
+      display: none;
+    }
+    .mapboxgl-popup-content {
+      position: relative;
+      height: 55px;
+      h1 {
+        text-transform: capitalize;
+        margin-bottom: 11%;
+      }
+      p {
+        font-size: smaller;
+      }
+      button {
+        user-select: none;
+        outline: none;
+        font-size: 20px;
+        position: absolute;
+        top: -4px;
+        right: 0;
+      }
+    }
+    .user-marker {
+      ion-icon {
+        color: red;
+        font-size: 35px;
+      }
+    }
+    .other-marker {
+      ion-icon {
+        color: blue;
+        font-size: 35px;
+      }
+    }
+    .inputs {
+      h5 {
+        font-size: 16.5px;
+        width: 100%;
+        margin-top: -3%;
+        ion-icon {
+          font-size: 23px;
+          margin: 0 0 -0.7% 2%;
+        }
+      }
+      @include size(100%, 20%, column, space-evenly, flex-start);
+      .input-container {
+        margin-bottom: -8%;
+        @include size(100%, 25%, column, center, stretch);
+        .input-text {
+          // background-color: brown;
+          @include size(95%, 25%, row, space-between, center);
+          h2 {
+            font-size: 18px;
+            margin-bottom: 7%;
+          }
+        }
+        .slider {
+          -webkit-appearance: none;
+          width: 90%;
+          height: 3px;
+          outline: none;
+          background: rgba(0, 0, 0, 0.747);
+          position: absolute;
+        }
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 17px;
+          height: 17px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 3;
+          position: relative;
+          background: rgb(49, 79, 87);
+        }
+
+        .progress-bar {
+          height: 3px;
+          background: rgb(26, 141, 135);
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  // ########################################################################
+  // EDIT INFO PAGE
+
+  .info-container {
+    @include size(100%, 85%, column, space-around, center);
+    
+    img {
+      width: 200px;
+      border-radius: 50%;
+    }
+    .other-user-picture {
+      width: 100%;
+      height: 60%;
+      margin-top: 5%;
+      overflow: hidden;
+      ion-icon {
+        font-size: 30px;
+        position: absolute;
+        top: 5%;
+        left: 2%;
+        z-index: 10;
+      }
+      .slideshow {
+        height: 100%;
+        transition: 0.35s;
+        display: flex;
+        .slides {
+          height: 100%;
+          min-width: 100%;
+          img {
+            border-radius: 20px;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .other-user-info {
+      @include size(100%, 36%, column, center, center);
+      // background-color: pink;
+      border-radius: 30px;
+      .text {
+        @include size(95%, 85%, column, space-between, flex-start);
+        // background-color: lightskyblue;
+        form {
+          height: 68%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          input {
+            width: 75%;
+            font-family: "Montserrat";
+            font-size: 18px;
+            // stlye to change
+            background-color: transparent;
+            border: none;
+            color: brown;
+            outline: none;
+          }
+          textarea {
+            height: 80%;
+            font-family: "Times New Roman", Times, serif;
+            text-align: justify;
+            font-size: 16.8px;
+            padding-top: 4%;
+            // stlye to change
+            background-color: transparent;
+            border: none;
+            outline: none;
+          }
+          ion-icon {
+            position: absolute;
+            right: 8%;
+            bottom: 26.3%;
+            font-size: 22px;
+          }
+        }
+        h1 {
+          text-transform: capitalize;
+          font-size: 33px;
+          width: 100%;
+          span {
+            font-size: 22px;
+            margin: -3% 3% 0 3%;
+          }
+        }
+      }
+      .icons {
+        // background-color: lightslategray;
+        @include size(90%, 8%, row, space-evenly, center);
+        position: absolute;
+        top: 54%;
+        ion-icon {
+          font-size: 40px;
+          color: rgba(58, 67, 73, 0.863);
+          // background-color: rgb(67, 58, 73);
+          // border-radius: 50%;
+        }
+      }
+    }
+  }
+}

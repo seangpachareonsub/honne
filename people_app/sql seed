@@ -1,0 +1,15 @@
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Ginni', 'gquinane0@fastcompany.com', 'Female', -30.5148445, -53.4832383, '11/26/1944', 'Leo');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Cristobal', 'cdrinkale1@t-online.de', 'Male', 46.987383, 123.769368, '07/27/1975', 'Scorpio');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Marlow', 'mbewshaw2@prweb.com', 'Male', 23.534915, 115.420204, '06/04/1974', 'Aqaurius');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Christan', 'cjiggins3@cbc.ca', 'Female', 2.028983, 101.585899, '03/19/1970', 'Taurus');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Vail', 'vlefevre4@ucoz.com', 'Male', 15.0219707, -88.1510962, '03/01/1951', 'Libra');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Jacquette', 'jkingham5@google.com', 'Female', '53.98492', '38.03593', '04/25/1952', 'Saggitarius');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Babbette', 'bwigfall6@amazonaws.com', 'Female', 40.152053, -8.3479579, '06/06/1995', 'Leo');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Tedie', 'tdowsey7@comcast.net', 'Male', 32.50171, 35.16621, '11/24/1978', 'Libra');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Sergio', 'snaylor8@mayoclinic.com', 'Male', -8.447079, 115.111632, '11/26/1999', 'Cancer');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Sherwin', 'sgierke9@answers.com', 'Male', 49.0424573, 89.4350462, '04/14/1982', 'Taurus');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Marilyn', 'mpitfielda@marketwatch.com', 'Female', 36.6714007, 136.7941217, '12/15/1973', 'Cancer');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Lyda', 'lgrubeb@smh.com.au', 'Female', 60.5201867, 23.2169967, '06/30/1987', 'Leo');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Erasmus', 'ewelmanc@amazon.co.jp', 'Male', 59.3754793, 16.4764129, '04/18/1976', 'Scorpio');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Betsy', 'bnelsond@smh.com.au', 'Female', 51.6455857, 39.2435026, '10/04/1971', 'Libra');
+insert into people_app_user (first_name, email, gender, latitude, longitude, date_of_birth, star_sign) values ('Lowe', 'ltoffolettoe@mapy.cz', 'Male', -5.7577862, 105.6984455, '02/03/1942', 'Taurus');
