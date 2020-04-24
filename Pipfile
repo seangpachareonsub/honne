@@ -13,6 +13,7 @@ pyjwt = "*"
 django = "==2.2.12"
 psycopg2-binary = "*"
 django-heroku = "*"
+Pillow = "*"
 
 [requires]
 python_version = "3.7"
