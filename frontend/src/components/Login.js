@@ -46,7 +46,7 @@ const Login = ({ history }) => {
   return (
     <>
       <div className='login-container'>
-      <video autoPlay loop src='https://i.imgur.com/sKvcjpH.mp4'></video>
+        <video autoPlay loop src='https://i.imgur.com/sKvcjpH.mp4'></video>
         <h1> HONNE <br /> <span> 本音 </span></h1>
         <form onChange={(e) => HandleChange(e)} onSubmit={(e) => HandleSubmit(e)}>
           <input name='email' autoComplete='off' value={history.email} placeholder='Email Address' type="text" />

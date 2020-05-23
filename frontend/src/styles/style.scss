@@ -11,22 +11,48 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  outline:none;
-  user-select: none;
 }
 
-body, html {
+body {
   @include size(100vw, 100vh, column, center, center);
   font-family: "Montserrat", sans-serif;
   color: black;
   line-height: 1;
   background-color: rgb(232, 231, 235);
-  min-height: 100%;
+  // background-color: snow;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  user-select: none;
 }
 
 #root {
   @include size(93vw, 96vh, column, center, center);
   // background-color: red;
+
+
+  // SCREEN SIZE ERROR MESSAGE
+
+  .screen-error {
+    background-color: rgb(67, 58, 73);
+    min-height: 100vh;
+    @include size(100vw, 100vh, column, center, center);
+    h1 {
+      font-family: "Poiret One", cursive;
+      font-size: 60px;
+      color: white;
+      transform: translateY(-30vh);
+    }
+    p {
+      width: 80%;
+      max-width: 350px;
+      color: white;
+      text-align: justify;
+      line-height: 21px;
+    }
+  }
 
   .home-text {
     z-index: 10;
@@ -118,7 +144,7 @@ body, html {
     h1 {
       z-index: 10;
       font-size: 50px;
-      font-family: "Times New Roman", Times, serif;
+      font-family: "Poiret One", cursive;
       color: white;
       position: absolute;
       top: 10%;
@@ -193,7 +219,7 @@ body, html {
     h1 {
       z-index: 10;
       font-size: 50px;
-      font-family: "Times New Roman", Times, serif;
+      font-family: "Poiret One", cursive;
       color: white;
       position: absolute;
       top: 10%;
