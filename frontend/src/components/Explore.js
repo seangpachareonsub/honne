@@ -98,13 +98,13 @@ const Explore = (props) => {
       <Header />
       <Navbar />
       <h1> hello </h1>
-      {/* <div className='inputs'>
+      <div className='inputs'>
         {/* LOCATION */}
-      {/* <h5 ref={location} onClick={(e) => HandleLocate(e)}> Find Me!
-          <ion-icon name='location-outline'></ion-icon></h5> */}
+        <h5 ref={location} onClick={(e) => HandleLocate(e)}> Find Me!
+          <ion-icon name='location-outline'></ion-icon></h5>
 
-      {/* RADIUS */}
-      {/* <div className='input-container'>
+        {/* RADIUS */}
+        <div className='input-container'>
           <div className='input-text'>
             <h2> Radius </h2>
             <h2 className='range-value'> </h2>
@@ -122,9 +122,9 @@ const Explore = (props) => {
         mapStyle='mapbox://styles/seangpachareonsub/ck98akro50l831iluwfd45321/draft'
         onViewportChange={viewport => {
           setViewport(viewport)
-        }}> */}
+        }}>
 
-      {/* {markers.map(el => {
+        {markers.map(el => {
           if (el.id !== auth.getUserId()) {
             return (
               <Marker key={el.id} latitude={parseFloat(el.latitude)}
@@ -133,13 +133,13 @@ const Explore = (props) => {
                 offsetTop={-30}
                 longitude={parseFloat(el.longitude)} >
                 <div className='other-marker'>
-                  <ion-icon onClick={() => setSelected(el) } name='pin-outline'></ion-icon>
+                  <ion-icon onClick={() => setSelected(el)} name='pin-outline'></ion-icon>
                 </div>
               </Marker>
             )
           } else {
             return (
-              <Marker key={user.id} 
+              <Marker key={user.id}
                 anchor={'top-left'}
                 offsetLeft={-20}
                 offsetTop={-30}
@@ -150,12 +150,12 @@ const Explore = (props) => {
                 </div>
               </Marker>
             )
-           
+
           }
 
-        })} */}
+        })}
 
-      {/* 
+
         {selected ? (
           <Popup
             offsetLeft={-5}
@@ -170,7 +170,7 @@ const Explore = (props) => {
           </Popup>
 
         ) : null}
-      </ReactMapGL>  */}
+      </ReactMapGL>
     </div>
   )
 }
