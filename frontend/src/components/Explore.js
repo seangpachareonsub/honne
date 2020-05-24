@@ -67,9 +67,8 @@ const Explore = (props) => {
         res.data.map(el => {
           if (el.id === auth.getUserId()) {
             setUser(el)
-            
+            console.log(el.latitude, el.longitude)
             setViewport({ ...viewport, latitude: parseFloat(el.latitude), longitude: parseFloat(el.longitude) })
-            console.log(el)
           } 
         })
         setMarkers(res.data)
