@@ -13,8 +13,8 @@ const Explore = (props) => {
     latitude: 0,
     longitude: 0,
     zoom: 13,
-    width: '100vw',
-    height: '83%'
+    width: 375,
+    height: 525
   })
 
   const [markers, setMarkers] = useState([])
