@@ -63,14 +63,12 @@ const Explore = (props) => {
     sliderLoop()
     axios.get('/api/users/')
       .then(res => {
-        // console.log(res.data, auth.getUserId())
+        console.log(res.data)
         res.data.map(el => {
           if (el.id === auth.getUserId()) {
             setUser(el)
-            
             setViewport({ ...viewport, latitude: parseFloat(el.latitude), longitude: parseFloat(el.longitude) })
-            console.log(el)
-          } 
+          }
         })
         setMarkers(res.data)
         setAllUsers(res.data)
@@ -99,13 +97,14 @@ const Explore = (props) => {
     <div className='explore-container'>
       <Header />
       <Navbar />
-      <div className='inputs'>
+      <h1> hello </h1>
+      {/* <div className='inputs'>
         {/* LOCATION */}
-        <h5 ref={location} onClick={(e) => HandleLocate(e)}> Find Me!
-          <ion-icon name='location-outline'></ion-icon></h5>
+      {/* <h5 ref={location} onClick={(e) => HandleLocate(e)}> Find Me!
+          <ion-icon name='location-outline'></ion-icon></h5> */}
 
-        {/* RADIUS */}
-        <div className='input-container'>
+      {/* RADIUS */}
+      {/* <div className='input-container'>
           <div className='input-text'>
             <h2> Radius </h2>
             <h2 className='range-value'> </h2>
@@ -123,9 +122,9 @@ const Explore = (props) => {
         mapStyle='mapbox://styles/seangpachareonsub/ck98akro50l831iluwfd45321/draft'
         onViewportChange={viewport => {
           setViewport(viewport)
-        }}>
+        }}> */}
 
-        {markers.map(el => {
+      {/* {markers.map(el => {
           if (el.id !== auth.getUserId()) {
             return (
               <Marker key={el.id} latitude={parseFloat(el.latitude)}
@@ -134,7 +133,7 @@ const Explore = (props) => {
                 offsetTop={-30}
                 longitude={parseFloat(el.longitude)} >
                 <div className='other-marker'>
-                  <ion-icon onClick={() => { setSelected(el) }} name='pin-outline'></ion-icon>
+                  <ion-icon onClick={() => setSelected(el) } name='pin-outline'></ion-icon>
                 </div>
               </Marker>
             )
@@ -154,16 +153,16 @@ const Explore = (props) => {
            
           }
 
-        })}
+        })} */}
 
-
+      {/* 
         {selected ? (
           <Popup
             offsetLeft={-5}
             offsetTop={-32}
             latitude={parseFloat(selected.latitude)}
             longitude={parseFloat(selected.longitude)}
-            onClose={() => { setSelected(null) }}>
+            onClose={() => setSelected(null)}>
             <h1> {selected.first_name}</h1>
             <p> {`${getDistance(parseFloat(user.latitude),
               parseFloat(user.longitude), parseFloat(selected.latitude),
@@ -171,7 +170,7 @@ const Explore = (props) => {
           </Popup>
 
         ) : null}
-      </ReactMapGL>
+      </ReactMapGL>  */}
     </div>
   )
 }
