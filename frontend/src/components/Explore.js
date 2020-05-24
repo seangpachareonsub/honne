@@ -63,12 +63,14 @@ const Explore = (props) => {
     sliderLoop()
     axios.get('/api/users/')
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data, auth.getUserId())
         res.data.map(el => {
           if (el.id === auth.getUserId()) {
             setUser(el)
+            
             setViewport({ ...viewport, latitude: parseFloat(el.latitude), longitude: parseFloat(el.longitude) })
-          }
+            console.log(el)
+          } 
         })
         setMarkers(res.data)
         setAllUsers(res.data)
@@ -97,7 +99,6 @@ const Explore = (props) => {
     <div className='explore-container'>
       <Header />
       <Navbar />
-      <h1> hello </h1>
       <div className='inputs'>
         {/* LOCATION */}
         <h5 ref={location} onClick={(e) => HandleLocate(e)}> Find Me!
@@ -133,13 +134,13 @@ const Explore = (props) => {
                 offsetTop={-30}
                 longitude={parseFloat(el.longitude)} >
                 <div className='other-marker'>
-                  <ion-icon onClick={() => setSelected(el)} name='pin-outline'></ion-icon>
+                  <ion-icon onClick={() => { setSelected(el) }} name='pin-outline'></ion-icon>
                 </div>
               </Marker>
             )
           } else {
             return (
-              <Marker key={user.id}
+              <Marker key={user.id} 
                 anchor={'top-left'}
                 offsetLeft={-20}
                 offsetTop={-30}
@@ -150,7 +151,7 @@ const Explore = (props) => {
                 </div>
               </Marker>
             )
-
+           
           }
 
         })}
@@ -162,7 +163,7 @@ const Explore = (props) => {
             offsetTop={-32}
             latitude={parseFloat(selected.latitude)}
             longitude={parseFloat(selected.longitude)}
-            onClose={() => setSelected(null)}>
+            onClose={() => { setSelected(null) }}>
             <h1> {selected.first_name}</h1>
             <p> {`${getDistance(parseFloat(user.latitude),
               parseFloat(user.longitude), parseFloat(selected.latitude),
