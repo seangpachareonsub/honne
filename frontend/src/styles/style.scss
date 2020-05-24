@@ -43,14 +43,19 @@ button {
       font-family: "Poiret One", cursive;
       font-size: 60px;
       color: white;
-      transform: translateY(-30vh);
+      transform: translateY(-18vh);
     }
     p {
-      width: 80%;
-      max-width: 350px;
+      width: 40%;
+      min-width: 330px;
       color: white;
       text-align: justify;
       line-height: 21px;
+
+      li {
+        list-style: disc;
+        font-size: 15px;
+      }
     }
   }
 
