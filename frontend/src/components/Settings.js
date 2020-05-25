@@ -73,7 +73,6 @@ const Settings = (props) => {
       axios.post('/api/userpreferences/', data)
         // put request to assign preference to specific user
         .then(res => {
-          console.log(res.data)
           axios.patch(`/api/users/${auth.getUserId()}/`, {
             preferences: res.data.id
           })
@@ -87,7 +86,7 @@ const Settings = (props) => {
       }
       axios.patch(`/api/userpreferences/${id}/`, edit)
     }
-    props.history.push(`/user/${auth.getUserId()}`)
+    props.history.goBack()
   }
 
   const HandleCheck = (e) => {

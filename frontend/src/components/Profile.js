@@ -5,8 +5,7 @@ import Navbar from './Navbar'
 import auth from './lib/auth'
 import { Link } from 'react-router-dom'
 import Header from './Header'
-import { TimelineLite, gsap, CSSPlugin } from 'gsap'
-gsap.registerPlugin( CSSPlugin )
+import { TimelineLite, Power2 } from 'gsap'
 
 
 const Profile = (props) => {

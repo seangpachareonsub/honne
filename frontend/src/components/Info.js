@@ -1,6 +1,4 @@
-import { TimelineLite, gsap } from 'gsap'
-import { CSSPlugin } from 'gsap/CSSPlugin'
-gsap.registerPlugin( CSSPlugin )
+import { TimelineLite } from 'gsap'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import moment from 'moment'
@@ -8,7 +6,7 @@ import auth from './lib/auth'
 import Header from './Header'
 import Navbar from './Navbar'
 
-const Info = () => {
+const Info = (props) => {
 
   const [data, setData] = useState({
     images: [{
@@ -40,7 +38,6 @@ const Info = () => {
 
   const HandleSlide = (e) => {
     const slides = Array.from(document.querySelectorAll('.slides'))
-    // const container = document.querySelector('.slideshow')
     const size = slides[0].clientWidth
     const t1 = new TimelineLite
 
@@ -48,18 +45,15 @@ const Info = () => {
       if (count === data.images.length) {
         return
       }
-      // container.style.transform = `translateX(-${size * count}px)`
       t1.to('.slideshow', 0.1, { filter: 'blur(3.5px)' })
         .to('.slideshow', 0.1, { transform: `translateX(-${size * count}px)` })
         .to('.slideshow', 0.15, { filter: 'blur(0)' }, '+=0.1')
       count++
       currentPosition += size
-      console.log(count)
     } else {
       if (count === 1) {
         return
       }
-      // container.style.transform = `translateX(-${currentPosition - size}px)`
       t1.to('.slideshow', 0.1, { filter: 'blur(3.75px)' })
         .to('.slideshow', 0.1, { transform: `translateX(-${currentPosition - size}px)` })
         .to('.slideshow', 0.15, { filter: 'blur(0)' }, '+=0.1')
@@ -77,6 +71,7 @@ const Info = () => {
   const HandleSubmit = (e) => {
     e.preventDefault()
     axios.patch(`/api/users/${auth.getUserId()}/`, form)
+    props.history.goBack()
   }
 
   return (
@@ -107,8 +102,9 @@ const Info = () => {
           <div className="text">
             <h1> {data.first_name}, <span>{data.date_of_birth ? moment().diff(data.date_of_birth, 'years') : null}  </span></h1>
             <small> Last active: {data.last_login === null ? 'a while ago...' : moment(data.last_login).fromNow()} </small>
+            
             <form onSubmit={(e) => HandleSubmit(e)} onChange={(e) => HandleChange(e)} action="">
-              <button><ion-icon name="pencil-outline"></ion-icon>  </button>
+              <button> Save </button>
               <input autoComplete='off' id='job' value={form.occupation} type="text" />
               <textarea autoComplete='off' id='bio' maxLength='200' value={form.bio} type="text" />
             </form>

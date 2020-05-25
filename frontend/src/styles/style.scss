@@ -22,16 +22,9 @@ body {
   // background-color: snow;
 }
 
-button {
-  background: transparent;
-  outline: none;
-  user-select: none;
-}
-
 #root {
   @include size(93vw, 96vh, column, center, center);
   // background-color: red;
-
 
   // SCREEN SIZE ERROR MESSAGE
 
@@ -181,23 +174,23 @@ button {
         }
       }
       small {
-        color:rgb(209, 26, 26);
+        color: rgb(209, 26, 26);
         position: absolute;
         left: 10%;
       }
-        #first {
-          top: 38.5%;
-        }
-        #second {
-          top: 50%;
-        }
-        #third {
-          top: 61%;
-        }
-        #fourth {
-          top: 72%;
-        }
-      
+      #first {
+        top: 38.5%;
+      }
+      #second {
+        top: 50%;
+      }
+      #third {
+        top: 61%;
+      }
+      #fourth {
+        top: 72%;
+      }
+
       button {
         font-size: 16px;
         color: white;
@@ -255,7 +248,7 @@ button {
         }
       }
       small {
-        color:rgb(209, 26, 26);
+        color: rgb(209, 26, 26);
         position: absolute;
         left: 10%;
         bottom: 41.7%;
@@ -484,7 +477,7 @@ button {
     transform: translateY(2.3%);
     img {
       width: 200px;
-      object-fit:cover;
+      object-fit: cover;
       height: 200px;
       border-radius: 50%;
     }
@@ -587,10 +580,9 @@ button {
         }
         h2 {
           margin-top: -3%;
-          width: 75%;
+          width: 100%;
           font-family: "Montserrat";
           font-size: 18px;
-          // stlye to change
           background-color: transparent;
           border: none;
           color: brown;
@@ -788,7 +780,7 @@ button {
       h4 {
         margin-left: 2%;
         margin-top: 2.5%;
-        color:rgb(85, 28, 126)
+        color: rgb(85, 28, 126);
       }
       .match-slider {
         width: 100%;
@@ -837,7 +829,7 @@ button {
         position: fixed;
         height: 4%;
         width: 90%;
-        color:rgb(85, 28, 126)
+        color: rgb(85, 28, 126);
       }
       .buffer {
         height: 5%;
@@ -887,15 +879,18 @@ button {
       @include size(100vw, 10%, row, none, center);
       background-color: rgb(67, 58, 73);
       margin-top: -5%;
-      img {
-        width: 60px;
-        border-radius: 50%;
+
+      .other-image {
         margin: 0 8%;
+        img {
+          width: 60px;
+          border-radius: 50%;
+        }
       }
+
       ion-icon {
         margin: 0 30%;
         font-size: 37px;
-        color: white;
       }
       h3 {
         font-size: 20px;
@@ -1165,10 +1160,14 @@ button {
       position: absolute;
       top: -7.3%;
       z-index: 10;
-      font-size: 21px;
-      right: 7%;
+      right: 5%;
+      background: transparent;
+      border: none;
+      user-select: none;
+      outline: none;
+      font-size: 20px;
       color: white;
-      font-family: "Times New Roman", Times, serif;
+      font-family: 'Times New Roman', Times, serif;
     }
     .image-container,
     .input-container {
@@ -1301,7 +1300,7 @@ button {
 
   .info-container {
     @include size(100%, 85%, column, space-around, center);
-    
+
     img {
       width: 200px;
       border-radius: 50%;
@@ -1340,7 +1339,6 @@ button {
       border-radius: 30px;
       .text {
         @include size(95%, 85%, column, space-between, flex-start);
-        // background-color: lightskyblue;
         form {
           height: 68%;
           width: 100%;
@@ -1350,7 +1348,7 @@ button {
             width: 75%;
             font-family: "Montserrat";
             font-size: 18px;
-            // stlye to change
+
             background-color: transparent;
             border: none;
             color: brown;
@@ -1362,16 +1360,24 @@ button {
             text-align: justify;
             font-size: 16.8px;
             padding-top: 4%;
-            // stlye to change
+
             background-color: transparent;
             border: none;
             outline: none;
           }
-          ion-icon {
+          button {
             position: absolute;
-            right: 8%;
-            bottom: 26.3%;
+            right: 5%;
+            top: 3.5%;
+            z-index: 10;
             font-size: 22px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            color: white;
+            background: transparent;
+            outline: none;
+            user-select: none;
+            border: none;
           }
         }
         h1 {

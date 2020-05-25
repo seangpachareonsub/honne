@@ -76,8 +76,9 @@ const Chat = (props) => {
       <div className='chat-container'>
         <div className='header'>
           <Link to='/messages'> <ion-icon name="arrow-back-outline"></ion-icon></Link>
-          <img src={otherUser.images.length === 0 ? 'https://cdn4.iconfinder.com/data/icons/user-people-2/48/6-512.png' : otherUser.images[0].picture.replace('8001', '8000')} />
-          <h3> {otherUser.first_name} </h3>
+          <Link className='other-image' to={`/user/${otherUser.id}`}> <img src={otherUser.images.length === 0 ? 'https://cdn4.iconfinder.com/data/icons/user-people-2/48/6-512.png' 
+            : otherUser.images[0].picture.replace('8001', '8000')} /> </Link>
+          <h3> {otherUser.first_name} </h3> 
         </div>
         <div className="convo-container">
           <div className="position-container">
