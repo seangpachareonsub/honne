@@ -207,7 +207,7 @@ const Swipe = (props) => {
             console.log(correctAnswers)
 
             // IF MORE 4+ ANSWERS MATCH 
-            if (correctAnswers >= 7) {
+            if (correctAnswers >= 4) {
 
               // BRING OUT MODAL
               ToggleModal()
