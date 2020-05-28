@@ -123,7 +123,7 @@ const Explore = (props) => {
           setViewport(viewport)
         }}>
 
-        {markers.map(el => {
+        {/* {markers.map(el => {
           if (el.id !== auth.getUserId()) {
             return (
               <Marker key={el.id} latitude={parseFloat(el.latitude)}
@@ -152,10 +152,10 @@ const Explore = (props) => {
            
           }
 
-        })}
+        })} */}
 
 
-        {selected ? (
+        {/* {selected ? (
           <Popup
             offsetLeft={-5}
             offsetTop={-32}
@@ -168,7 +168,7 @@ const Explore = (props) => {
               parseFloat(selected.longitude))} km away`} </p>
           </Popup>
 
-        ) : null}
+        ) : null} */}
       </ReactMapGL>
     </div>
   )
