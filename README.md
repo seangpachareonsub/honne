@@ -4,7 +4,7 @@
 
 ### Overview
 
-This is the final project of the Software Engineering bootcamp at GA London. The assignment was to create a full-stack application within one week, and I chose to take on the project solo. It allowed me to balance out my portfolio,having already developed two group projects but only one individually.
+This is the final project of the Software Engineering bootcamp at GA London. The assignment was to create a full-stack application within one week, and I chose to take on the project solo. It allowed me to balance out my portfolio, having already developed two group projects but only one individually.
 
 Honne is dating app that takes on a new approach and challenges the standard functionality of dating apps allowing users to connect on a deeper level. Users of the application are matched by answering a collection of questions set by other users and as a result, they can identify if their matches’ values and goals align with their own. All of this is achieved by using the Django REST framework with a PostgreSQL database and a React front-end.
 
@@ -17,7 +17,7 @@ If you would like to test the app, you can create your own account (the email ad
 **Email:** test@test.com <br />
 **Password:** Password2020
 
-The app was designed with the consideration of a mobile first layout therefore, please open the app either on a mobile device or on Google Chrome Developer Tools under the iPhone X view.
+The app was designed with the consideration of a iPhone X layout. Therefore, please open the app either on an iPhone X or on Google Chrome Developer Tools under the iPhone X view.
 
 #### Technical Requirements:
 * Choose to work solo or in a team
@@ -59,7 +59,7 @@ Within the PostgreSQL database, I created seven tables/models.
   - QuestionChoices
   - UserQuestions
 
-The User model extends the AbstractBaseUser model which provided basic authentication functionality. I opted to use AbstractBaseUser over the standard AbstractUser because it allowed me to overwrite the initial 'USERNAME_FIELD' (unique identifier of each user). Django's default uses the username of a user as the 'USERNAME_FIELD' but this wasn't necessary for my application. Using AbstractBaseUser allowed me to assign the email address of each user as the 'USERNAME_FIELD'.
+The User model extends the `AbstractBaseUser` model which provided basic authentication functionality. I opted to use `AbstractBaseUser` over the standard `AbstractUser` because it allowed me to overwrite the initial 'USERNAME_FIELD' (unique identifier of each user). Django's default uses the username of a user as the 'USERNAME_FIELD' but this wasn't necessary for my application. Using `AbstractBaseUser` allowed me to assign the email address of each user as the 'USERNAME_FIELD'.
 
 In extension to this, I added custom fields to my User model. A new user is created upon registration where a `POST` request is sent to the `/api/register` endpoint. Once a new user is created, all other information of a user such as D.O.B, sex etc. can be updated through a `PATCH` request to `/api/users/<int:pk>` endpoint.
 
@@ -89,10 +89,10 @@ class User(AbstractBaseUser):
     return self.first_name
 ```
 
-The IndividualPictues model and the endpoints leading to this model act as central location for all photos uploaded onto the app regardless of the user. Django provides a `models.ImageField()` field option but I realised that assinging the User model a direct image field as such would mean that each user would be restricted to one image. Therefore, the uploading of images follows these steps:
+The IndividualPictues model and the endpoints leading to this model act as a central location for all photos uploaded onto the app regardless of the user. Django provides a `models.ImageField()` field option but I realised that assinging the User model a direct image field would mean that each user would be restricted to one image. Therefore, the uploading of images follows these steps:
 
 * Uploading a photo is through a `POST` request to `/api/individualpictures`
-* The owner field in the IndividualPictures model is a `model.ForeignKey` field which relates to a the user uploading the photo. Using this, we can send a `PATCH` request to the specific user and modify the `models.ManyToMany` image field to include the primary key of the new image. With these steps, the app allows for up to six photos per user.
+* The owner field in the `IndividualPictures` model is a `model.ForeignKey` field which relates to the user uploading the photo. Using this, we can send a `PATCH` request to the specific user and modify the `models.ManyToMany` image field to include the primary key of the new image. The app allows for up to six photos per user.
 
 ``` js
 class IndividualPictures(models.Model):
@@ -118,7 +118,7 @@ if settings.DEBUG:
   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
-I created a `UserPreferences` model which mimics the `IndividualPictures` model by means of acting as a central location for all match preferences for all users. By doing so, it allowed me to limit the number of fields for the User model and seperate potential conflicting fields i.e. the sex of the user vs the sex preference of their potential matches.
+I created a `UserPreferences` model which mimics the `IndividualPictures` model by means of acting as a central location for all match preferences for all users. By doing so, it allowed me to limit the number of fields on the User model and seperate potential conflicting fields i.e. the sex of the user vs the sex preference of their potential matches.
 
 The way of assinging the user preferences to each user follows two steps:
 
@@ -139,7 +139,7 @@ class UserPreferences(models.Model):
 
 The `IndividualMessages` and `Messages` models go hand in hand to create conversations between users on the app. When a new match occurs between two users, a conversation is immediately created for them. This is achieved through two requests:
 
-* `POST` request to `/api/messages` endpoint and includes both user's primary keys and an initial empty messages field. The messages field is a `models.ManyToMany` field drawing data from the `IndividualMessages` model.
+* `POST` request to `/api/messages` endpoint which includes both user's primary keys and an initial empty messages field. The messages field is a `models.ManyToMany` field drawing data from the `IndividualMessages` model.
 * `PATCH` request sent to both users using the `/api/users/<int:pk>` endpoint to update their conversations field to include the new conversation
 
 ``` js
@@ -152,7 +152,7 @@ class Messages(models.Model):
     return f'{self.user_one} & {self.user_two}'
 ```
 
-When users conversate, all messages on the app are stored inside the `IndividualMessages` table. Each data row in the table includes the primary keys of both users in the conversation, the message string sent as well as the time/date of the message. Each individual message gets assigned to their respected conversation similar to each user preference being assigned to the specific user it relates to.
+When users conversate, all messages on the app are stored inside the `IndividualMessages` table. Each data row in the table includes the primary keys of both users in the conversation, the message string sent and the time/date of the message. Each individual message gets assigned to their respected conversation similar to each user preference being assigned to the specific user it relates to.
 
 * `POST` request sent to `/api/individualmessages` which is where all messages on the app are stored
 * `PATCH` request sent to `/api/messages/<int:pk>` to update the conversation with the primary key of the new message
@@ -189,7 +189,7 @@ class QuestionChoices(models.Model):
 Once a user selects their collection of 6 questions during the initial setup, the next phases follow:
 
 * `POST` request sent to `/api/userquestions` endpoint. The `UserQuestions` table holds all the question selections of all users on the app. 
-* Users themselves need to answer the question they've selected and once this happens, a `PATCH` request is sent to `/api/userquestions/<int:pk>` to include the answers they've given.
+* Users themselves need to answer the question they've selected and once this happens, a `PATCH` request is sent to `/api/userquestions/<int:pk>` modifying the data row to include the answers they've given.
 * That specific primary key for the user question data row is used in order to assign it to the correct user through another `PATCH` request to `/api/users/<int:pk>` modifying their questions field.
 
 ``` js
@@ -209,22 +209,22 @@ class UserQuestions(models.Model):
 * Login & register page
 * Initial set up page (location, sex, D.O.B, question selections)
 * User profile page with three subpages: 
-  - User settings/preference page
+  - User settings/preferences page
   - Media page to add photos to profile
   - Bio page for users to write about themselves
 * Swipe page, users answer others questions and see if they match or not
 * Message page, displays conversation list and recent matches
-* Private coversation page to talk to other users
+* Private conversation page to talk to other users
 * Explore page allowing users to see who is around them
 * Two modal pop ups, one for when matching with someone new and another for account deletion
 
-The application's main colour palette is a mixture of off white and purple. The aim was to keep the design to a minimal and using off white gave the impression of a clean and sleek look. The purple contrasted this towards the overall design and is often associated with nobility, ambition and peace.
+The application's main colour palette is a mixture of off-white and purple. The aim was to keep the design to a minimum and using off-white gave the impression of a clean and sleek look. The purple gave a contrast towards the overall design and is often associated with nobility, ambition and peace.
 
 There are four main pages of the application, all of which are accessible through the navigation bar. 
 
 #### Swipe page
 
-The app runs on the concept that users are matched based on how many answers are correctly given to another's collection of questions. With this in mind, the concept adds a gaming element to the functionality. Users are able to immediately gauge a sense of other user's personality while keeping the standard of aspects of dating apps i.e. picture, star sign, distance and age being shown.
+The app runs on the concept that users are matched based on how many answers are correctly given to another's collection of questions. With this in mind, the concept adds a gaming element to the functionality. Users are able to immediately gauge a sense of other user's personality while keeping the standard aspects of dating apps i.e. picture, star sign, distance and age being shown.
 
 The swipe page is split into a number of different steps: 
 
@@ -240,9 +240,7 @@ axios.get('/api/users')
         setUser(el)
       }
     })
-```
 
-``` js
 const filter = res.data.filter(el => {
 const uSex = user.preferences.sex
 const min = user.preferences.min_age
@@ -270,7 +268,7 @@ const matched = user.matches.map(el => el.id)
 setPotentials(filter)
 ``` 
 
-`getDistance` is a function that calculates the distance between two longitude and latitudes.
+`getDistance()` is a function that calculates the distance between two longitudes and latitudes.
 
 ```js
 const getDistance = (lat1, lon1, lat2, lon2) => {
@@ -294,7 +292,7 @@ const deg2rad = (deg) => {
 Once the current user has given their answers and now wants to compare if theirs match those of the person who initially set the questions, the matching function can be broken down as such:
 
 The first step does the following:
-* Ensures that all 6 answers are answered by the current user
+* Ensures that all 6 questions are answered by the current user
 * Sends a `GET` request to `/api/userquestions` where the response is the answers of the user who initially set the questions 
 * Compares the current user's answers against the potential matches' answers
 
@@ -310,7 +308,7 @@ if (userAnswers.split(',').length !== 6) {
       })
 ```
 
-If 4+ questions are correctly answered which in turn creates a match between the two users the following happens:
+If 4+ questions are correctly answered then a match is created between the two users and the following happens:
 
 * Send `PATCH` request to `/api/users/<int:pk>` to update and modify both users' matches field to include one another.
 
@@ -334,7 +332,7 @@ if (correctAnswers >= 4) {
   axios.post('/api/messages/', newConvo)
 ```
 
-* Inside a nested promise chain, I've then proceeded to update both users conversation field to now include the newly created conversation created using it's primary key in the response from the `POST` request.
+* Inside a nested promise, I've then proceeded to update both users conversation field to now include the newly created conversation using it's primary key in the response from the `POST` request.
 
 ``` js
 .then(res => {
@@ -378,7 +376,7 @@ else {
 
 The second main component of the app is the message page which displays the current user's most recent matches as as well as their conversations with the most recent conversations at the top of the list.
 
-I've used the array sort method with my own comparison function inside the method itself to compare between message ids. The higher the id, therefore means the most recent the message.
+I've used the array `sort()` method with my own comparison function inside the method itself to compare between message ids. The higher the id, means the more recent the message.
 
 ``` js
 useEffect(() => {
@@ -407,9 +405,9 @@ Clicking on the names of the users most recent matches re-directs them to their 
 
 #### Explore page
 
-The explore page of the application utilises React Map GL and features the locations of nearby users. The purpose of this page was to allow users to gauge their surroundings and answer questions if there were users around.
+The explore page of the application utilises React Map GL and features the locations of nearby users. The purpose of this page was to allow users to gauge their surroundings and encourage them answer questions if there were users around.
 
-The `viewport` state initialises the map once the component mounts and focuses on the map on the current user's location using their longitude and latitude.
+The `viewport` state initialises the map once the component mounts and focuses the map on the current user's location using their longitude and latitude.
 
 ``` js
  const [viewport, setViewport] = useState({
@@ -472,7 +470,7 @@ I've then mapped through all the users on the app and have visually plotted a 'p
 
 #### Profile page
 
-TLike any profile page, it serves to allow users to control their presence on the application. The app directs them to three sub pages to do so:
+Like any profile page, it serves to allow users to control their presence on the application. The app directs them to three sub pages to do so:
 
 * Images page
 * Preferences page
@@ -496,8 +494,9 @@ const updateUser = () => {
 useEffect(() => updateUser(), [])
 ```
 
-Empty photo slots which are available for upload have the following structure:
 The input element has an inline style of `display: none` and the upload icon takes the functionality of the input within an `onClick` event. The `HandleFile()` function updates the `useRef` current element and uses the input element's functionality.
+
+Empty photo slots which are available for upload have the following structure:
 
 ``` js
 const input = useRef()
@@ -525,11 +524,11 @@ const HandleFile = (e) => {
 
 
 ### Bugs
-Although during development, the app functions properly and to it's full extent, there were issues that had arisen post deployment:
+During the development phase, the app functions properly and to it's full extent. However, there were issues that had arisen post deployment:
 
-* Heroku does not support image files and therefore, images on the deployed version of the application does not work. This includes the uploading of photos as well as profile pictures across the app.
-* The app is featured and is accessible through a web browser meaning that the layout causes unnecessary scrolling. This issue would not occur if the site was an actual phone application which takes up the entire phone height and width.
-* The soft keyboard on Android pushes the content and squeezes the content to 40% screen height and causes the design of the app to mess up.
+* Heroku does not support image files and therefore, images on the deployed version of the application do not work. This includes the uploading of photos as well as profile pictures across the app.
+* The app is only featured and is accessible through a web browser meaning that the layout causes unnecessary scrolling. This issue would not occur if the site was an actual phone application because the layout takes up the entire phone height and width.
+* The soft keyboard on Android pushes the content and squeezes the content to 40% screen height and causes the design of the app to be squashed.
 * Due to time constraints, I was only able to develop the site on the iPhone X screen size and therefore, on any other mobile/desktop screen size, the app does not function properly.
 * The chat feature is not live, the page must re-render for new messages to come through
 

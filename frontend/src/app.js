@@ -72,7 +72,7 @@ const App = () => {
       <div className='screen-error'>
         <h1> HONNE </h1>
         <p> Unfortunately, this application is not yet supported for desktop view.
-          For optimal user experience, please open on mobile or Google Chrome Developer
+          For optimal user experience, please open on an iPhone X or Google Chrome Developer
           Tools under the iPhone X screen sizing.
         </p>
 

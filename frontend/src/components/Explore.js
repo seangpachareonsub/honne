@@ -63,7 +63,6 @@ const Explore = (props) => {
     sliderLoop()
     axios.get('/api/users/')
       .then(res => {
-        // console.log(res.data, auth.getUserId())
         res.data.map(el => {
           if (el.id === auth.getUserId()) {
             setUser(el)
