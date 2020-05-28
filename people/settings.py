@@ -45,7 +45,7 @@ MIDDLEWARE = [
     'xframeoptions.middleware.Header'
 ]
 
-X_FRAME_OPTIONS = 'ALLOWALL'
+Header always set X-Frame-Options ALLOWALL
 
 ROOT_URLCONF = 'people.urls'
 
