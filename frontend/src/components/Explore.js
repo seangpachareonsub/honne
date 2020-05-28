@@ -10,8 +10,8 @@ const Explore = (props) => {
   const key = 'pk.eyJ1Ijoic2VhbmdwYWNoYXJlb25zdWIiLCJhIjoiY2s5OGE2NGduMDBveTNubW43ang4NnFoayJ9.6qxOtlGy2vVtypOyGd7-DA'
 
   const [viewport, setViewport] = useState({
-    latitude: 0,
     longitude: 0,
+    latitude: 0,
     zoom: 13,
     width: 375,
     height: 525
