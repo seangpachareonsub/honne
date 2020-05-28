@@ -519,9 +519,9 @@ const HandleFile = (e) => {
 
 ### Screenshots
 
-<img src='https://i.imgur.com/a1Z21TU.png'>
-<img src='https://i.imgur.com/qt75DkC.png'>
-<img src='https://i.imgur.com/FHEWVca.png'>
+<img src='https://i.imgur.com/p8cHmyh.png'>
+<img src='https://i.imgur.com/CbcPEed.png'>
+<img src='https://i.imgur.com/LJytksC.png'>
 
 
 ### Bugs
