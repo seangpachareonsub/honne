@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'frontend',
     'people_app',
+    'xframeoptions'
 ]
 
 MIDDLEWARE = [
@@ -41,7 +42,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'xframeoptions.middleware.Header'
 ]
+
+X_FRAME_OPTIONS = 'ALLOWALL'
 
 ROOT_URLCONF = 'people.urls'
 
@@ -132,6 +136,3 @@ REST_FRAMEWORK = {
 }
 
 django_heroku.settings(locals())
-
-X-Frame-Options: ALLOW-FROM https://seangpachareonsub.github.io/
-X-Frame-Options: ALLOW-FROM https://seangpachareonsub.com/
