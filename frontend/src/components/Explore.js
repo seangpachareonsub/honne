@@ -68,7 +68,7 @@ const Explore = (props) => {
             setUser(el)
             console.log(el.latitude, el.longitude)
             setViewport({ ...viewport, latitude: parseFloat(el.latitude), longitude: parseFloat(el.longitude) })
-          } 
+          }
         })
         setMarkers(res.data)
         setAllUsers(res.data)
@@ -126,17 +126,18 @@ const Explore = (props) => {
         {markers.map(el => {
           if (el.id !== auth.getUserId()) {
             return (
-              <Marker key={el.id} latitude={parseFloat(el.latitude)}
+              <Marker key={el.id}
+                longitude={parseFloat(el.longitude)}
+                latitude={parseFloat(el.latitude)}
                 anchor={'top-left'}
                 offsetLeft={-20}
-                offsetTop={-30}
-                longitude={parseFloat(el.longitude)}>
+                offsetTop={-30}>
                 <div className='other-marker'>
                   <ion-icon onClick={() => { setSelected(el) }} name='pin-outline'></ion-icon>
                 </div>
               </Marker>
             )
-          } 
+          }
           // else {
           //   return (
           //     <Marker key={user.id} 
