@@ -132,3 +132,6 @@ REST_FRAMEWORK = {
 }
 
 django_heroku.settings(locals())
+
+X-Frame-Options: ALLOW-FROM https://seangpachareonsub.github.io/
+X-Frame-Options: ALLOW-FROM https://seangpachareonsub.com/
