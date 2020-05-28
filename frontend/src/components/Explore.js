@@ -123,23 +123,12 @@ const Explore = (props) => {
           setViewport(viewport)
         }}>
 
-        <Marker
-          anchor={'top-left'}
-          offsetLeft={-20}
-          offsetTop={-30}
-          latitude={parseFloat(user.latitude)}
-          longitude={parseFloat(user.longitude)} >
-          <div className='user-marker'>
-            <ion-icon name="pin-outline"></ion-icon>
-          </div>
-        </Marker>
-
-        {/* {markers.map(el => {
+        {markers.map(el => {
           if (el.id !== auth.getUserId()) {
             return (
               <Marker key={el.id}
-                longitude={parseFloat(el.longitude)}
-                latitude={parseFloat(el.latitude)}
+                longitude={markers ? parseFloat(el.longitude) : null }
+                latitude={markers ? parseFloat(el.latitude) : null }
                 anchor={'top-left'}
                 offsetLeft={-20}
                 offsetTop={-30}>
@@ -148,21 +137,22 @@ const Explore = (props) => {
                 </div>
               </Marker>
             )
-          } else {
-            return (
-              <Marker key={user.id} 
-                anchor={'top-left'}
-                offsetLeft={-20}
-                offsetTop={-30}
-                latitude={parseFloat(el.latitude)}
-                longitude={parseFloat(el.longitude)} >
-                <div className='user-marker'>
-                  <ion-icon name="pin-outline"></ion-icon>
-                </div>
-              </Marker>
-            )
-          }
-        })} */}
+          } 
+          // else {
+          //   return (
+          //     <Marker key={user.id} 
+          //       anchor={'top-left'}
+          //       offsetLeft={-20}
+          //       offsetTop={-30}
+          //       latitude={parseFloat(el.latitude)}
+          //       longitude={parseFloat(el.longitude)} >
+          //       <div className='user-marker'>
+          //         <ion-icon name="pin-outline"></ion-icon>
+          //       </div>
+          //     </Marker>
+          //   )
+          // }
+        })}
 
 
         {/* {selected ? (
