@@ -127,8 +127,8 @@ const Explore = (props) => {
           anchor={'top-left'}
           offsetLeft={-20}
           offsetTop={-30}
-          latitude={51.5838}
-          longitude={-0.0913} >
+          latitude={parseFloat(user.latitude)}
+          longitude={parseFloat(user.longitude)} >
           <div className='user-marker'>
             <ion-icon name="pin-outline"></ion-icon>
           </div>
