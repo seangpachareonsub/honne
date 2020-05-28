@@ -130,28 +130,27 @@ const Explore = (props) => {
                 anchor={'top-left'}
                 offsetLeft={-20}
                 offsetTop={-30}
-                longitude={parseFloat(el.longitude)} >
+                longitude={parseFloat(el.longitude)}>
                 <div className='other-marker'>
                   <ion-icon onClick={() => { setSelected(el) }} name='pin-outline'></ion-icon>
                 </div>
               </Marker>
             )
-          } else {
-            return (
-              <Marker key={user.id} 
-                anchor={'top-left'}
-                offsetLeft={-20}
-                offsetTop={-30}
-                latitude={parseFloat(el.latitude)}
-                longitude={parseFloat(el.longitude)} >
-                <div className='user-marker'>
-                  <ion-icon name="pin-outline"></ion-icon>
-                </div>
-              </Marker>
-            )
-           
-          }
-
+          } 
+          // else {
+          //   return (
+          //     <Marker key={user.id} 
+          //       anchor={'top-left'}
+          //       offsetLeft={-20}
+          //       offsetTop={-30}
+          //       latitude={parseFloat(el.latitude)}
+          //       longitude={parseFloat(el.longitude)} >
+          //       <div className='user-marker'>
+          //         <ion-icon name="pin-outline"></ion-icon>
+          //       </div>
+          //     </Marker>
+          //   )
+          // }
         })}
 
 
