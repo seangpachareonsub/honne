@@ -137,25 +137,24 @@ const Explore = (props) => {
                 </div>
               </Marker>
             )
-          } 
-          // else {
-          //   return (
-          //     <Marker key={user.id} 
-          //       anchor={'top-left'}
-          //       offsetLeft={-20}
-          //       offsetTop={-30}
-          //       latitude={parseFloat(el.latitude)}
-          //       longitude={parseFloat(el.longitude)} >
-          //       <div className='user-marker'>
-          //         <ion-icon name="pin-outline"></ion-icon>
-          //       </div>
-          //     </Marker>
-          //   )
-          // }
+          } else {
+            return (
+              <Marker key={user.id} 
+                anchor={'top-left'}
+                offsetLeft={-20}
+                offsetTop={-30}
+                latitude={user ? parseFloat(user.latitude) : null}
+                longitude={user ? parseFloat(user.longitude) : null} >
+                <div className='user-marker'>
+                  <ion-icon name="pin-outline"></ion-icon>
+                </div>
+              </Marker>
+            )
+          }
         })}
 
 
-        {/* {selected ? (
+        {selected ? (
           <Popup
             offsetLeft={-5}
             offsetTop={-32}
@@ -168,7 +167,7 @@ const Explore = (props) => {
               parseFloat(selected.longitude))} km away`} </p>
           </Popup>
 
-        ) : null} */}
+        ) : null}
       </ReactMapGL>
     </div>
   )
