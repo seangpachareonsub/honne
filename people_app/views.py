@@ -24,6 +24,8 @@ from rest_framework.response import Response
 
 ###############################################################################################################
 
+
+
 # REGISTRATION VIEW, USING REGISTER SERIALIZER
 class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
