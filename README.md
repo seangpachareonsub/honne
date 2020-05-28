@@ -46,7 +46,7 @@ The app was designed with the consideration of a iPhone X layout. Therefore, ple
 
 ## Approach
 
-<img src='https://i.imgur.com/vOk25NF.jpg'>
+<img src='https://i.imgur.com/GC2yl5s.jpg'>
 
 ### Back-end:
 
