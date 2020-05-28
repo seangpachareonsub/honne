@@ -123,7 +123,7 @@ const Explore = (props) => {
           setViewport(viewport)
         }}>
 
-        {/* {markers.map(el => {
+        {markers.map(el => {
           if (el.id !== auth.getUserId()) {
             return (
               <Marker key={el.id} latitude={parseFloat(el.latitude)}
@@ -152,7 +152,7 @@ const Explore = (props) => {
            
           }
 
-        })} */}
+        })}
 
 
         {/* {selected ? (
