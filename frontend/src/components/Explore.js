@@ -123,7 +123,7 @@ const Explore = (props) => {
           setViewport(viewport)
         }}>
 
-        <Marker key={user.id}
+        <Marker
           anchor={'top-left'}
           offsetLeft={-20}
           offsetTop={-30}
