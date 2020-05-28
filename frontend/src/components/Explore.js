@@ -127,8 +127,8 @@ const Explore = (props) => {
           if (el.id !== auth.getUserId()) {
             return (
               <Marker key={el.id}
-                longitude={user ? parseFloat(user.longitude) : null }
-                latitude={user ? parseFloat(user.latitude) : null }
+                longitude={user ? parseFloat(el.longitude) : null }
+                latitude={user ? parseFloat(el.latitude) : null }
                 anchor={'top-left'}
                 offsetLeft={-20}
                 offsetTop={-30}>
