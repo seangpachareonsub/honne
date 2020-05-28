@@ -30,8 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'frontend',
-    'people_app',
-    'xframeoptions'
+    'people_app'
 ]
 
 MIDDLEWARE = [
@@ -40,12 +39,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'xframeoptions.middleware.Header'
+    'django.contrib.messages.middleware.MessageMiddleware'
 ]
 
-# Header always set X-Frame-Options ALLOWALL
+Header always set X-Frame-Options ALLOWALL
 
 ROOT_URLCONF = 'people.urls'
 
