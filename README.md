@@ -531,9 +531,13 @@ Although during development, the app functions properly and to it's full extent,
 * The app is featured and is accessible through a web browser meaning that the layout causes unnecessary scrolling. This issue would not occur if the site was an actual phone application which takes up the entire phone height and width.
 * The soft keyboard on Android pushes the content and squeezes the content to 40% screen height and causes the design of the app to mess up.
 * Due to time constraints, I was only able to develop the site on the iPhone X screen size and therefore, on any other mobile/desktop screen size, the app does not function properly.
+* The chat feature is not live, the page must re-render for new messages to come through
 
 ### Potential future features and improvements
 
 * Serve images through Amazon S3 bucket where image files can be stored
 * Design the layout of the app with other mobile screens in mind where the design can be as adaptable as possible using relative units rather than fixed styling
+* Incorporate actual swipe touch to the page when disliking a user.
+* Introduce websockets to the chat feature to create live communication channels between users
+* Establish the app on the IOS and Google app store, since the design and layout was made for full screen phone width and height in mind.
 
