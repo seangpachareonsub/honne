@@ -137,14 +137,14 @@ const Explore = (props) => {
                 </div>
               </Marker>
             )
-          } else {
+          } else if (el.latitude) {
             return (
               <Marker key={user.id} 
                 anchor={'top-left'}
                 offsetLeft={-20}
                 offsetTop={-30}
-                latitude={user ? parseFloat(user.latitude) : null}
-                longitude={user ? parseFloat(user.longitude) : null} >
+                latitude={parseFloat(el.latitude)}
+                longitude={parseFloat(el.longitude)} >
                 <div className='user-marker'>
                   <ion-icon name="pin-outline"></ion-icon>
                 </div>
