@@ -158,17 +158,17 @@ const ProfileSetup = (props) => {
   return (
     <>
       <div className="setup-container">
-      <Header />
+        <Header />
         
         <div className="setup-content">
        
           <form onSubmit={(e) => HandleSubmit(e)} onChange={(e) => HandleChange(e)}>
-          <h1> User Settings <br/ > <small> Let's set you up for your date </small></h1>
+            <h1> User Settings <br/ > <small> Let's set you up for your date </small></h1>
             {/* location */}
             <div className='setup-date'>
               <h2> Your location is...  </h2>
               <h5 ref={location} onClick={(e) => HandleLocate(e)}> Find Me
-              <ion-icon name="location-outline"></ion-icon></h5>
+                <ion-icon name="location-outline"></ion-icon></h5>
             </div>
 
             {/* date of birth */}

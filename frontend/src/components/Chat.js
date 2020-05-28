@@ -55,7 +55,7 @@ const Chat = (props) => {
         // PUSHING THE CURRENT ID'S FROM THE ORIGINAL CONVO AND THE NEW ONE JUST POSTED
         data.messages.map(el => update.push(el.id))
         update.push(response.data.id)
-        // CREATING OUR RE.BODY OBJECT TO SEND OFF TO UPDATE CONVO
+        // CREATING OUR REQ OBJECT TO SEND OFF TO UPDATE CONVO
         const convo = { messages: update }
         // PUT REQUEST TO UPDATE CONVO 
         // AND GET REQUEST TO UPDATE STATE AND RE RENDER CONVO
