@@ -8,6 +8,9 @@ This is the final project of the Software Engineering bootcamp at GA London. The
 
 Honne is dating app that takes on a new approach and challenges the standard functionality of dating apps allowing users to connect on a deeper level. Users of the application are matched by answering a collection of questions set by other users and as a result, they can identify if their matches’ values and goals align with their own. All of this is achieved by using the Django REST framework with a PostgreSQL database and a React front-end.
 
+* **Project Duration:** 7 days
+* **Work Environment:** Individual project
+
 You can launch the game on [Heroku](https://ga-honne.herokuapp.com/), or find the [GitHub repository](https://github.com/seangpachareonsub/honne).
 
 **NOTE** 
