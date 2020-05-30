@@ -15,7 +15,7 @@ You can launch the game on [Heroku](https://ga-honne.herokuapp.com/), or find th
 
 **NOTE** 
 
-If you would like to test the app, you can create your own account (the email address does not need to be real) or please feel free to use the following credentials for a demo account:
+If you would like to test the app, please feel free to use the following credentials for a demo account:
 
 **Email:** test@test.com <br />
 **Password:** Password2020
